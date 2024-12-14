@@ -1,28 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { Canvas } from '@react-three/fiber'; // React Three Fiber for 3D models
-import { OrbitControls, useGLTF } from '@react-three/drei'; // For camera controls and GLTF loader
-
-// Component for loading the 3D .glb model
-const ModelBackground = () => {
-  const { scene } = useGLTF('/src/components/esp_8266_mod.glb'); // Load your .glb file
-
-  return <primitive object={scene} scale={5} position={[0, 0, 0]} />;
-};
 
 const HeroSection = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-green-50 to-white">
-      {/* Background with 3D Model */}
-      <div className="absolute inset-0 z-0">
-        <Canvas camera={{ position: [0, 2, 10], fov: 50 }} className="w-full h-full">
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[5, 5, 5]} intensity={1} />
-          <ModelBackground /> {/* This is your 3D model background */}
-          <OrbitControls /> {/* Allows for rotating the 3D scene */}
-        </Canvas>
-      </div>
+      {/* Background Gradient */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-green-100 to-white" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div

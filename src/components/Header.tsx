@@ -15,7 +15,7 @@ const Header = ({ toggleSidebar }: HeaderProps) => {
         </button>
 
         {/* Logo on the right */}
-        <img src="src/components/logo.svg" alt="Logo" className="w-24 h-24" />
+        <img src="logo.svg" alt="Logo" className="w-24 h-24" />
       </div>
     </header>
   );
